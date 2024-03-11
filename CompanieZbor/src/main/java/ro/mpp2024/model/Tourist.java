@@ -4,11 +4,11 @@ import java.util.Objects;
 
 public class Tourist {
     private int touristID;
-    private String name;
+    private String touristName;
 
     public Tourist(int touristID, String name) {
         this.touristID = touristID;
-        this.name = name;
+        this.touristName = name;
     }
 
     public int getTouristID() {
@@ -19,12 +19,12 @@ public class Tourist {
         this.touristID = touristID;
     }
 
-    public String getName() {
-        return name;
+    public String getTouristName() {
+        return touristName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTouristName(String touristName) {
+        this.touristName = touristName;
     }
 
     @Override
@@ -32,19 +32,19 @@ public class Tourist {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Tourist tourist = (Tourist) o;
-        return touristID == tourist.touristID && Objects.equals(name, tourist.name);
+        return touristID == tourist.touristID && Objects.equals(touristName, tourist.touristName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(touristID, name);
+        return Objects.hash(touristID, touristName);
     }
 
     @Override
     public String toString() {
         return "Tourist{" +
                 "touristID=" + touristID +
-                ", name='" + name + '\'' +
+                ", name='" + touristName + '\'' +
                 '}';
     }
 }
