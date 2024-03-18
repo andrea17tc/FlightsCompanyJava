@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Tourist extends Entity<Integer> {
     private String touristName;
 
-    public Tourist(int touristID, String name) {
+    public Tourist(String name) {
         this.touristName = name;
     }
 

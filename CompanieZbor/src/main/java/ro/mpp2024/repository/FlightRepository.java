@@ -23,19 +23,30 @@ public class FlightRepository implements Repository<Integer, Flight>{
     @Override
     public Optional<Flight> findOne(Integer integer) {
         logger.traceEntry();
-        Flight f;
         Connection con =dbUtils.getConnection();
-        try(PreparedStatement preparedStatement=con.prepareStatement("select * from flight where id=?;")){
-            preparedStatement.setInt(1, integer);
-            int result = preparedStatement.executeUpdate();
-            logger.trace("saved {} instances", result);
-        }catch(SQLException ex){
+        try(PreparedStatement statement = con.prepareStatement("select * from flight where id=?;");)
+        {
+            statement.setInt(1,integer);
+            ResultSet resultSet = statement.executeQuery();
+            if(resultSet.next()) {
+                String destination = resultSet.getString("destination");
+                Date date = resultSet.getDate("date");
+                String airport = resultSet.getString("airport");
+                Integer noSeats = resultSet.getInt("noTotalSeats");
+                Flight f = new Flight(destination,date,airport,noSeats);
+                f.setId(integer);
+                logger.trace("found {} instances", f);
+                return Optional.ofNullable(f);
+            }
+        }
+        catch (SQLException ex) {
             logger.error(ex);
             System.err.println("Error DB" + ex);
-
         }
-        logger.traceExit(f);
-        return Optional.of(f);
+
+        logger.traceExit();
+        return Optional.empty();
+
     }
 
     @Override
@@ -58,6 +69,7 @@ public class FlightRepository implements Repository<Integer, Flight>{
                 flights.add(f);
 
             }
+            logger.trace("found all {} instances", flights);
             return flights;
 
         }catch(SQLException ex){
@@ -96,7 +108,7 @@ public class FlightRepository implements Repository<Integer, Flight>{
         {
             preparedStatement.setInt(1, id);
             int result = preparedStatement.executeUpdate();
-            logger.trace("saved {} instances", result);
+            logger.trace("deleted {} instances", result);
         }catch(SQLException ex){
             logger.error(ex);
             System.err.println("Error DB" + ex);
@@ -115,7 +127,7 @@ public class FlightRepository implements Repository<Integer, Flight>{
             preparedStatement.setString(2,entity.getAirport());
             preparedStatement.setInt(3, id);
             int result = preparedStatement.executeUpdate();
-            logger.trace("saved {} instances", result);
+            logger.trace("updated {} instances", result);
         }catch(SQLException ex){
             logger.error(ex);
             System.err.println("Error DB" + ex);

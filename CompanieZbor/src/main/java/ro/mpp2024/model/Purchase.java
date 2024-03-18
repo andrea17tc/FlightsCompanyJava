@@ -10,15 +10,15 @@ public class Purchase extends Entity<Integer> {
 
     private Tourist tourist;
 
-    private String clientAddress;
+    private String clientAdress;
 
     private int noBookedSeats;
 
-    public Purchase(Flight flight, User user, Tourist tourist, String clientAddress, int noBookedSeats) {
+    public Purchase(Flight flight, User user, Tourist tourist, String clientAdress, int noBookedSeats) {
         this.flight = flight;
         this.user = user;
         this.tourist = tourist;
-        this.clientAddress = clientAddress;
+        this.clientAdress = clientAdress;
         this.noBookedSeats = noBookedSeats;
     }
 
@@ -47,12 +47,12 @@ public class Purchase extends Entity<Integer> {
         this.tourist = tourist;
     }
 
-    public String getClientAddress() {
-        return clientAddress;
+    public String getClientAdress() {
+        return clientAdress;
     }
 
-    public void setClientAddress(String clientAddress) {
-        this.clientAddress = clientAddress;
+    public void setClientAdress(String clientAdress) {
+        this.clientAdress = clientAdress;
     }
 
     public int getNoBookedSeats() {
@@ -69,12 +69,12 @@ public class Purchase extends Entity<Integer> {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Purchase purchase = (Purchase) o;
-        return noBookedSeats == purchase.noBookedSeats && Objects.equals(flight, purchase.flight) && Objects.equals(user, purchase.user) && Objects.equals(tourist, purchase.tourist) && Objects.equals(clientAddress, purchase.clientAddress);
+        return noBookedSeats == purchase.noBookedSeats && Objects.equals(flight, purchase.flight) && Objects.equals(user, purchase.user) && Objects.equals(tourist, purchase.tourist) && Objects.equals(clientAdress, purchase.clientAdress);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), flight, user, tourist, clientAddress, noBookedSeats);
+        return Objects.hash(super.hashCode(), flight, user, tourist, clientAdress, noBookedSeats);
     }
 
     @Override
@@ -83,7 +83,7 @@ public class Purchase extends Entity<Integer> {
                 "flight=" + flight +
                 ", user=" + user +
                 ", tourist=" + tourist +
-                ", clientAddress='" + clientAddress + '\'' +
+                ", clientAdress='" + clientAdress + '\'' +
                 ", noBookedSeats=" + noBookedSeats +
                 '}';
     }
