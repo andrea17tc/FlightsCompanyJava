@@ -2,59 +2,49 @@ package ro.mpp2024.model;
 
 import java.util.Objects;
 
-public class Purchase {
+public class Purchase extends Entity<Integer> {
 
-    private int purchaseID;
+    private Flight flight;
 
-    private int flightID;
+    private User user;
 
-    private int userID;
-
-    private String clientName;
+    private Tourist tourist;
 
     private String clientAddress;
 
-    private int noSeats;
+    private int noBookedSeats;
 
-    public Purchase(int purchaseID, int flightID, int userID, String clientName, String clientAddress, int noSeats) {
-        this.purchaseID = purchaseID;
-        this.flightID = flightID;
-        this.userID = userID;
-        this.clientName = clientName;
+    public Purchase(Flight flight, User user, Tourist tourist, String clientAddress, int noBookedSeats) {
+        this.flight = flight;
+        this.user = user;
+        this.tourist = tourist;
         this.clientAddress = clientAddress;
-        this.noSeats = noSeats;
+        this.noBookedSeats = noBookedSeats;
     }
 
-    public int getPurchaseID() {
-        return purchaseID;
+
+    public Flight getFlight() {
+        return flight;
     }
 
-    public void setPurchaseID(int purchaseID) {
-        this.purchaseID = purchaseID;
+    public void setFlight(Flight flight) {
+        this.flight = flight;
     }
 
-    public int getFlightID() {
-        return flightID;
+    public User getUser() {
+        return user;
     }
 
-    public void setFlightID(int flightID) {
-        this.flightID = flightID;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public int getUserID() {
-        return userID;
+    public Tourist getTourist() {
+        return tourist;
     }
 
-    public void setUserID(int userID) {
-        this.userID = userID;
-    }
-
-    public String getClientName() {
-        return clientName;
-    }
-
-    public void setClientName(String clientName) {
-        this.clientName = clientName;
+    public void setTourist(Tourist tourist) {
+        this.tourist = tourist;
     }
 
     public String getClientAddress() {
@@ -65,36 +55,36 @@ public class Purchase {
         this.clientAddress = clientAddress;
     }
 
-    public int getNoSeats() {
-        return noSeats;
+    public int getNoBookedSeats() {
+        return noBookedSeats;
     }
 
-    public void setNoSeats(int noSeats) {
-        this.noSeats = noSeats;
+    public void setNoBookedSeats(int noBookedSeats) {
+        this.noBookedSeats = noBookedSeats;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
         Purchase purchase = (Purchase) o;
-        return purchaseID == purchase.purchaseID && flightID == purchase.flightID && userID == purchase.userID && noSeats == purchase.noSeats && Objects.equals(clientName, purchase.clientName) && Objects.equals(clientAddress, purchase.clientAddress);
+        return noBookedSeats == purchase.noBookedSeats && Objects.equals(flight, purchase.flight) && Objects.equals(user, purchase.user) && Objects.equals(tourist, purchase.tourist) && Objects.equals(clientAddress, purchase.clientAddress);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(purchaseID, flightID, userID, clientName, clientAddress, noSeats);
+        return Objects.hash(super.hashCode(), flight, user, tourist, clientAddress, noBookedSeats);
     }
 
     @Override
     public String toString() {
         return "Purchase{" +
-                "purchaseID=" + purchaseID +
-                ", flightID=" + flightID +
-                ", userID=" + userID +
-                ", clientName='" + clientName + '\'' +
+                "flight=" + flight +
+                ", user=" + user +
+                ", tourist=" + tourist +
                 ", clientAddress='" + clientAddress + '\'' +
-                ", noSeats=" + noSeats +
+                ", noBookedSeats=" + noBookedSeats +
                 '}';
     }
 }

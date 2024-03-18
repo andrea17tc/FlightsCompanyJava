@@ -1,33 +1,24 @@
 package ro.mpp2024.model;
 
-import java.time.LocalDateTime;
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.Objects;
 
-public class Flight {
-    private int flightID;
+public class Flight extends Entity<Integer> {
 
     private String destination;
 
-    private LocalDateTime dateTime;
+    private Date date;
 
     private String airport;
 
-    private int noSeats;
+    private int noTotalSeats;
 
-    public Flight(int flightID, String destination, LocalDateTime dateTime, String airport, int noSeats) {
-        this.flightID = flightID;
+    public Flight(String destination, Date date, String airport, int noSeats) {
         this.destination = destination;
-        this.dateTime = dateTime;
+        this.date = date;
         this.airport = airport;
-        this.noSeats = noSeats;
-    }
-
-    public int getFlightID() {
-        return flightID;
-    }
-
-    public void setFlightID(int flightID) {
-        this.flightID = flightID;
+        this.noTotalSeats = noSeats;
     }
 
     public String getDestination() {
@@ -38,12 +29,12 @@ public class Flight {
         this.destination = destination;
     }
 
-    public LocalDateTime getDateTime() {
-        return dateTime;
+    public Date getDate() {
+        return date;
     }
 
-    public void setDateTime(LocalDateTime dateTime) {
-        this.dateTime = dateTime;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public String getAirport() {
@@ -54,12 +45,12 @@ public class Flight {
         this.airport = airport;
     }
 
-    public int getNoSeats() {
-        return noSeats;
+    public int getNoTotalSeats() {
+        return noTotalSeats;
     }
 
-    public void setNoSeats(int noSeats) {
-        this.noSeats = noSeats;
+    public void setNoTotalSeats(int noTotalSeats) {
+        this.noTotalSeats = noTotalSeats;
     }
 
     @Override
@@ -67,22 +58,21 @@ public class Flight {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Flight flight = (Flight) o;
-        return flightID == flight.flightID && noSeats == flight.noSeats && Objects.equals(destination, flight.destination) && Objects.equals(dateTime, flight.dateTime) && Objects.equals(airport, flight.airport);
+        return noTotalSeats == flight.noTotalSeats && Objects.equals(destination, flight.destination) && Objects.equals(date, flight.date) && Objects.equals(airport, flight.airport);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(flightID, destination, dateTime, airport, noSeats);
+        return Objects.hash(destination, date, airport, noTotalSeats);
     }
 
     @Override
     public String toString() {
         return "Flight{" +
-                "flightID=" + flightID +
                 ", destination='" + destination + '\'' +
-                ", dateTime=" + dateTime +
+                ", date=" + date +
                 ", airport='" + airport + '\'' +
-                ", noSeats=" + noSeats +
+                ", noSeats=" + noTotalSeats +
                 '}';
     }
 }

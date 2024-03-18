@@ -2,31 +2,31 @@ package ro.mpp2024.model;
 
 import java.util.Objects;
 
-public class Trip {
-    private int touristID;
-    private int purchaseID;
+public class Trip extends Entity<Integer> {
+    private Tourist tourist;
+    private Purchase purchase;
 
 
-    public Trip(int touristID, int purchaseID) {
-        this.touristID = touristID;
-        this.purchaseID = purchaseID;
+    public Trip(Tourist tourist, Purchase purchase) {
+        this.tourist = tourist;
+        this.purchase = purchase;
     }
 
 
-    public int getTouristID() {
-        return touristID;
+    public Tourist getTourist() {
+        return tourist;
     }
 
-    public void setTouristID(int touristID) {
-        this.touristID = touristID;
+    public void setTourist(Tourist tourist) {
+        this.tourist = tourist;
     }
 
-    public int getPurchaseID() {
-        return purchaseID;
+    public Purchase getPurchase() {
+        return purchase;
     }
 
-    public void setPurchaseID(int purchaseID) {
-        this.purchaseID = purchaseID;
+    public void setPurchase(Purchase purchase) {
+        this.purchase = purchase;
     }
 
     @Override
@@ -34,19 +34,19 @@ public class Trip {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Trip trip = (Trip) o;
-        return touristID == trip.touristID && purchaseID == trip.purchaseID;
+        return tourist == trip.tourist && purchase == trip.purchase;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(touristID, purchaseID);
+        return Objects.hash(tourist, purchase);
     }
 
     @Override
     public String toString() {
         return "Trip{" +
-                "touristID=" + touristID +
-                ", purchaseID=" + purchaseID +
+                "touristID=" + tourist +
+                ", purchaseID=" + purchase +
                 '}';
     }
 }

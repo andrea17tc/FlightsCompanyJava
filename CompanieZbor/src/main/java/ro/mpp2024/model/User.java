@@ -2,25 +2,15 @@ package ro.mpp2024.model;
 
 import java.util.Objects;
 
-public class User {
-    private int userID;
+public class User extends Entity<Integer>{
     private String username;
     private String password;
 
-    public User(int userID, String username, String password) {
-        this.userID = userID;
+    public User( String username, String password) {
         this.username = username;
         this.password = password;
     }
 
-
-    public int getUserID() {
-        return userID;
-    }
-
-    public void setUserID(int userID) {
-        this.userID = userID;
-    }
 
     public String getUsername() {
         return username;
@@ -43,18 +33,17 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return userID == user.userID && Objects.equals(username, user.username) && Objects.equals(password, user.password);
+        return Objects.equals(username, user.username) && Objects.equals(password, user.password);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userID, username, password);
+        return Objects.hash(username, password);
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "userID=" + userID +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 '}';

@@ -2,22 +2,13 @@ package ro.mpp2024.model;
 
 import java.util.Objects;
 
-public class Tourist {
-    private int touristID;
+public class Tourist extends Entity<Integer> {
     private String touristName;
 
     public Tourist(int touristID, String name) {
-        this.touristID = touristID;
         this.touristName = name;
     }
 
-    public int getTouristID() {
-        return touristID;
-    }
-
-    public void setTouristID(int touristID) {
-        this.touristID = touristID;
-    }
 
     public String getTouristName() {
         return touristName;
@@ -32,18 +23,17 @@ public class Tourist {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Tourist tourist = (Tourist) o;
-        return touristID == tourist.touristID && Objects.equals(touristName, tourist.touristName);
+        return Objects.equals(touristName, tourist.touristName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(touristID, touristName);
+        return Objects.hash( touristName);
     }
 
     @Override
     public String toString() {
         return "Tourist{" +
-                "touristID=" + touristID +
                 ", name='" + touristName + '\'' +
                 '}';
     }
