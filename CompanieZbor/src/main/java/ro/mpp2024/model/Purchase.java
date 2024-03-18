@@ -12,14 +12,12 @@ public class Purchase extends Entity<Integer> {
 
     private String clientAdress;
 
-    private int noBookedSeats;
 
-    public Purchase(Flight flight, User user, Tourist tourist, String clientAdress, int noBookedSeats) {
+    public Purchase(Flight flight, User user, Tourist tourist, String clientAdress) {
         this.flight = flight;
         this.user = user;
         this.tourist = tourist;
         this.clientAdress = clientAdress;
-        this.noBookedSeats = noBookedSeats;
     }
 
 
@@ -55,13 +53,6 @@ public class Purchase extends Entity<Integer> {
         this.clientAdress = clientAdress;
     }
 
-    public int getNoBookedSeats() {
-        return noBookedSeats;
-    }
-
-    public void setNoBookedSeats(int noBookedSeats) {
-        this.noBookedSeats = noBookedSeats;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -69,12 +60,12 @@ public class Purchase extends Entity<Integer> {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Purchase purchase = (Purchase) o;
-        return noBookedSeats == purchase.noBookedSeats && Objects.equals(flight, purchase.flight) && Objects.equals(user, purchase.user) && Objects.equals(tourist, purchase.tourist) && Objects.equals(clientAdress, purchase.clientAdress);
+        return  Objects.equals(flight, purchase.flight) && Objects.equals(user, purchase.user) && Objects.equals(tourist, purchase.tourist) && Objects.equals(clientAdress, purchase.clientAdress);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), flight, user, tourist, clientAdress, noBookedSeats);
+        return Objects.hash(super.hashCode(), flight, user, tourist, clientAdress);
     }
 
     @Override
@@ -84,7 +75,6 @@ public class Purchase extends Entity<Integer> {
                 ", user=" + user +
                 ", tourist=" + tourist +
                 ", clientAdress='" + clientAdress + '\'' +
-                ", noBookedSeats=" + noBookedSeats +
                 '}';
     }
 }

@@ -1,0 +1,14 @@
+18 Mar 2024 20:16:52,014 INFO  ro.mpp2024.repository.FlightRepository 19 <init> - Initializing FlightRepository with properties: {jdbc.user=, jdbc.url=jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db, jdbc.pass=} 
+18 Mar 2024 20:16:52,038 TRACE ro.mpp2024.repository.FlightRepository 86 save - Enter saving task Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}
+18 Mar 2024 20:16:52,038 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+18 Mar 2024 20:16:52,039 TRACE ro.mpp2024.utils.JdbcUtils 26 getNewConnection - Enter
+18 Mar 2024 20:16:52,039 INFO  ro.mpp2024.utils.JdbcUtils 31 getNewConnection - trying to connect to database ... jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db
+18 Mar 2024 20:16:52,042 INFO  ro.mpp2024.utils.JdbcUtils 32 getNewConnection - user: 
+18 Mar 2024 20:16:52,042 INFO  ro.mpp2024.utils.JdbcUtils 33 getNewConnection - pass: 
+18 Mar 2024 20:16:52,383 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@52c3cb31)
+18 Mar 2024 20:16:52,400 TRACE ro.mpp2024.repository.FlightRepository 94 save - saved 1 instances
+18 Mar 2024 20:16:52,401 TRACE ro.mpp2024.repository.FlightRepository 99 save - Exit
+18 Mar 2024 20:16:52,401 TRACE ro.mpp2024.repository.FlightRepository 54 findAll - Enter
+18 Mar 2024 20:16:52,402 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+18 Mar 2024 20:16:52,402 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@52c3cb31)
+18 Mar 2024 20:16:52,414 TRACE ro.mpp2024.repository.FlightRepository 72 findAll - found all [Flight{, destination='Barcelona', date=1970-01-01, airport='Barcelona El Prat', noSeats=150}, Flight{, destination='Vienna', date=2024-03-21, airport='Vienna Airport', noSeats=120}, Flight{, destination='Bergamo', date=2024-03-22, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}] instances
