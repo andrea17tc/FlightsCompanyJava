@@ -8,13 +8,13 @@ public class Flight extends Entity<Integer> {
 
     private String destination;
 
-    private Date date;
+    private LocalDate date;
 
     private String airport;
 
     private int noTotalSeats;
 
-    public Flight(String destination, Date date, String airport, int noSeats) {
+    public Flight(String destination, LocalDate date, String airport, int noSeats) {
         this.destination = destination;
         this.date = date;
         this.airport = airport;
@@ -29,11 +29,11 @@ public class Flight extends Entity<Integer> {
         this.destination = destination;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 

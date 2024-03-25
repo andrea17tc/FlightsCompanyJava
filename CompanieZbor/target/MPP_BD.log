@@ -12,3 +12,304 @@
 18 Mar 2024 20:16:52,402 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
 18 Mar 2024 20:16:52,402 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@52c3cb31)
 18 Mar 2024 20:16:52,414 TRACE ro.mpp2024.repository.FlightRepository 72 findAll - found all [Flight{, destination='Barcelona', date=1970-01-01, airport='Barcelona El Prat', noSeats=150}, Flight{, destination='Vienna', date=2024-03-21, airport='Vienna Airport', noSeats=120}, Flight{, destination='Bergamo', date=2024-03-22, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}] instances
+18 Mar 2024 20:47:29,044 INFO  ro.mpp2024.repository.FlightRepository 20 <init> - Initializing FlightRepository with properties: {jdbc.user=, jdbc.url=jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db, jdbc.pass=} 
+18 Mar 2024 20:47:29,084 TRACE ro.mpp2024.repository.FlightRepository 87 save - Enter saving task Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}
+18 Mar 2024 20:47:29,084 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+18 Mar 2024 20:47:29,084 TRACE ro.mpp2024.utils.JdbcUtils 26 getNewConnection - Enter
+18 Mar 2024 20:47:29,084 INFO  ro.mpp2024.utils.JdbcUtils 31 getNewConnection - trying to connect to database ... jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db
+18 Mar 2024 20:47:29,086 INFO  ro.mpp2024.utils.JdbcUtils 32 getNewConnection - user: 
+18 Mar 2024 20:47:29,086 INFO  ro.mpp2024.utils.JdbcUtils 33 getNewConnection - pass: 
+18 Mar 2024 20:47:29,411 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+18 Mar 2024 20:47:29,429 TRACE ro.mpp2024.repository.FlightRepository 95 save - saved 1 instances
+18 Mar 2024 20:47:29,430 TRACE ro.mpp2024.repository.FlightRepository 100 save - Exit
+18 Mar 2024 20:47:29,430 TRACE ro.mpp2024.repository.FlightRepository 55 findAll - Enter
+18 Mar 2024 20:47:29,432 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+18 Mar 2024 20:47:29,432 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+18 Mar 2024 20:47:29,445 TRACE ro.mpp2024.repository.FlightRepository 73 findAll - found all [Flight{, destination='Barcelona', date=1970-01-01, airport='Barcelona El Prat', noSeats=150}, Flight{, destination='Vienna', date=2024-03-21, airport='Vienna Airport', noSeats=120}, Flight{, destination='Bergamo', date=2024-03-22, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}] instances
+18 Mar 2024 20:47:29,446 TRACE ro.mpp2024.repository.FlightRepository 106 delete - Enter saving task of id 4
+18 Mar 2024 20:47:29,447 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+18 Mar 2024 20:47:29,447 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+18 Mar 2024 20:47:29,448 TRACE ro.mpp2024.repository.FlightRepository 112 delete - deleted 0 instances
+18 Mar 2024 20:47:29,448 TRACE ro.mpp2024.repository.FlightRepository 117 delete - Exit
+18 Mar 2024 20:47:29,449 TRACE ro.mpp2024.repository.FlightRepository 55 findAll - Enter
+18 Mar 2024 20:47:29,449 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+18 Mar 2024 20:47:29,449 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+18 Mar 2024 20:47:29,453 TRACE ro.mpp2024.repository.FlightRepository 73 findAll - found all [Flight{, destination='Barcelona', date=1970-01-01, airport='Barcelona El Prat', noSeats=150}, Flight{, destination='Vienna', date=2024-03-21, airport='Vienna Airport', noSeats=120}, Flight{, destination='Bergamo', date=2024-03-22, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}] instances
+18 Mar 2024 20:47:29,456 TRACE ro.mpp2024.repository.FlightRepository 26 findOne - Enter
+18 Mar 2024 20:47:29,456 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+18 Mar 2024 20:47:29,457 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+18 Mar 2024 20:47:29,458 TRACE ro.mpp2024.repository.FlightRepository 39 findOne - found Flight{, destination='Barcelona', date=1970-01-01, airport='Barcelona El Prat', noSeats=150} instances
+18 Mar 2024 20:47:29,459 TRACE ro.mpp2024.repository.FlightRepository 123 update - Enter saving task Flight{, destination='Barcelona', date=2024-04-19, airport='Barcelona Airport', noSeats=150}
+18 Mar 2024 20:47:29,459 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+18 Mar 2024 20:47:29,459 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+18 Mar 2024 20:47:29,460 TRACE ro.mpp2024.repository.FlightRepository 131 update - updated 1 instances
+18 Mar 2024 20:47:29,460 TRACE ro.mpp2024.repository.FlightRepository 136 update - Exit
+18 Mar 2024 20:47:29,463 INFO  ro.mpp2024.repository.UserRepository 22 <init> - Initializing UserRepository with properties: {jdbc.user=, jdbc.url=jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db, jdbc.pass=}
+18 Mar 2024 20:47:29,464 TRACE ro.mpp2024.repository.UserRepository 52 findAll - Enter
+18 Mar 2024 20:47:29,464 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+18 Mar 2024 20:47:29,464 TRACE ro.mpp2024.utils.JdbcUtils 26 getNewConnection - Enter
+18 Mar 2024 20:47:29,465 INFO  ro.mpp2024.utils.JdbcUtils 31 getNewConnection - trying to connect to database ... jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db
+18 Mar 2024 20:47:29,465 INFO  ro.mpp2024.utils.JdbcUtils 32 getNewConnection - user: 
+18 Mar 2024 20:47:29,465 INFO  ro.mpp2024.utils.JdbcUtils 33 getNewConnection - pass: 
+18 Mar 2024 20:47:29,468 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@6d1ef78d)
+18 Mar 2024 20:47:29,470 TRACE ro.mpp2024.repository.UserRepository 65 findAll - Found all 1 instances
+25 Mar 2024 10:35:13,175 INFO  ro.mpp2024.repository.FlightRepository 20 <init> - Initializing FlightRepository with properties: {jdbc.user=, jdbc.url=jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db, jdbc.pass=} 
+25 Mar 2024 10:35:13,248 TRACE ro.mpp2024.repository.FlightRepository 87 save - Enter saving task Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}
+25 Mar 2024 10:35:13,249 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:35:13,249 TRACE ro.mpp2024.utils.JdbcUtils 26 getNewConnection - Enter
+25 Mar 2024 10:35:13,249 INFO  ro.mpp2024.utils.JdbcUtils 31 getNewConnection - trying to connect to database ... jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db
+25 Mar 2024 10:35:13,250 INFO  ro.mpp2024.utils.JdbcUtils 32 getNewConnection - user: 
+25 Mar 2024 10:35:13,251 INFO  ro.mpp2024.utils.JdbcUtils 33 getNewConnection - pass: 
+25 Mar 2024 10:35:13,687 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+25 Mar 2024 10:35:13,706 TRACE ro.mpp2024.repository.FlightRepository 95 save - saved 1 instances
+25 Mar 2024 10:35:13,707 TRACE ro.mpp2024.repository.FlightRepository 100 save - Exit
+25 Mar 2024 10:35:13,708 TRACE ro.mpp2024.repository.FlightRepository 55 findAll - Enter
+25 Mar 2024 10:35:13,708 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:35:13,709 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+25 Mar 2024 10:35:13,724 TRACE ro.mpp2024.repository.FlightRepository 73 findAll - found all [Flight{, destination='Barcelona', date=1970-01-01, airport='Barcelona El Prat', noSeats=150}, Flight{, destination='Vienna', date=2024-03-21, airport='Vienna Airport', noSeats=120}, Flight{, destination='Bergamo', date=2024-03-22, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}] instances
+25 Mar 2024 10:35:13,728 TRACE ro.mpp2024.repository.FlightRepository 106 delete - Enter saving task of id 4
+25 Mar 2024 10:35:13,730 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:35:13,730 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+25 Mar 2024 10:35:13,731 TRACE ro.mpp2024.repository.FlightRepository 112 delete - deleted 0 instances
+25 Mar 2024 10:35:13,731 TRACE ro.mpp2024.repository.FlightRepository 117 delete - Exit
+25 Mar 2024 10:35:13,732 TRACE ro.mpp2024.repository.FlightRepository 55 findAll - Enter
+25 Mar 2024 10:35:13,732 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:35:13,732 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+25 Mar 2024 10:35:13,736 TRACE ro.mpp2024.repository.FlightRepository 73 findAll - found all [Flight{, destination='Barcelona', date=1970-01-01, airport='Barcelona El Prat', noSeats=150}, Flight{, destination='Vienna', date=2024-03-21, airport='Vienna Airport', noSeats=120}, Flight{, destination='Bergamo', date=2024-03-22, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=3924-04-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}] instances
+25 Mar 2024 10:35:13,738 TRACE ro.mpp2024.repository.FlightRepository 26 findOne - Enter
+25 Mar 2024 10:35:13,740 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:35:13,741 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+25 Mar 2024 10:35:13,742 TRACE ro.mpp2024.repository.FlightRepository 39 findOne - found Flight{, destination='Barcelona', date=1970-01-01, airport='Barcelona El Prat', noSeats=150} instances
+25 Mar 2024 10:35:13,743 TRACE ro.mpp2024.repository.FlightRepository 123 update - Enter saving task Flight{, destination='Barcelona', date=2024-04-19, airport='Barcelona Airport', noSeats=150}
+25 Mar 2024 10:35:13,743 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:35:13,744 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+25 Mar 2024 10:35:13,746 TRACE ro.mpp2024.repository.FlightRepository 131 update - updated 1 instances
+25 Mar 2024 10:35:13,746 TRACE ro.mpp2024.repository.FlightRepository 136 update - Exit
+25 Mar 2024 10:35:13,762 INFO  ro.mpp2024.repository.UserRepository 22 <init> - Initializing UserRepository with properties: {jdbc.user=, jdbc.url=jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db, jdbc.pass=}
+25 Mar 2024 10:35:13,762 TRACE ro.mpp2024.repository.UserRepository 52 findAll - Enter
+25 Mar 2024 10:35:13,763 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:35:13,763 TRACE ro.mpp2024.utils.JdbcUtils 26 getNewConnection - Enter
+25 Mar 2024 10:35:13,764 INFO  ro.mpp2024.utils.JdbcUtils 31 getNewConnection - trying to connect to database ... jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db
+25 Mar 2024 10:35:13,764 INFO  ro.mpp2024.utils.JdbcUtils 32 getNewConnection - user: 
+25 Mar 2024 10:35:13,764 INFO  ro.mpp2024.utils.JdbcUtils 33 getNewConnection - pass: 
+25 Mar 2024 10:35:13,767 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@6d1ef78d)
+25 Mar 2024 10:35:13,783 TRACE ro.mpp2024.repository.UserRepository 65 findAll - Found all 1 instances
+25 Mar 2024 10:40:18,828 INFO  ro.mpp2024.repository.FlightRepository 20 <init> - Initializing FlightRepository with properties: {jdbc.user=, jdbc.url=jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db, jdbc.pass=} 
+25 Mar 2024 10:40:18,864 TRACE ro.mpp2024.repository.FlightRepository 87 save - Enter saving task Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}
+25 Mar 2024 10:40:18,864 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:40:18,864 TRACE ro.mpp2024.utils.JdbcUtils 26 getNewConnection - Enter
+25 Mar 2024 10:40:18,865 INFO  ro.mpp2024.utils.JdbcUtils 31 getNewConnection - trying to connect to database ... jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db
+25 Mar 2024 10:40:18,865 INFO  ro.mpp2024.utils.JdbcUtils 32 getNewConnection - user: 
+25 Mar 2024 10:40:18,866 INFO  ro.mpp2024.utils.JdbcUtils 33 getNewConnection - pass: 
+25 Mar 2024 10:40:19,196 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+25 Mar 2024 10:40:19,214 TRACE ro.mpp2024.repository.FlightRepository 95 save - saved 1 instances
+25 Mar 2024 10:40:19,215 TRACE ro.mpp2024.repository.FlightRepository 100 save - Exit
+25 Mar 2024 10:40:19,215 TRACE ro.mpp2024.repository.FlightRepository 55 findAll - Enter
+25 Mar 2024 10:40:19,215 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:40:19,216 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+25 Mar 2024 10:40:19,223 ERROR ro.mpp2024.repository.FlightRepository 77 findAll - java.sql.SQLException: Error parsing time stamp
+25 Mar 2024 10:40:19,225 TRACE ro.mpp2024.repository.FlightRepository 81 findAll - Exit with([])
+25 Mar 2024 10:40:19,225 TRACE ro.mpp2024.repository.FlightRepository 106 delete - Enter saving task of id 4
+25 Mar 2024 10:40:19,225 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:40:19,226 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+25 Mar 2024 10:40:19,226 TRACE ro.mpp2024.repository.FlightRepository 112 delete - deleted 0 instances
+25 Mar 2024 10:40:19,227 TRACE ro.mpp2024.repository.FlightRepository 117 delete - Exit
+25 Mar 2024 10:40:19,227 TRACE ro.mpp2024.repository.FlightRepository 55 findAll - Enter
+25 Mar 2024 10:40:19,228 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:40:19,228 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+25 Mar 2024 10:40:19,229 ERROR ro.mpp2024.repository.FlightRepository 77 findAll - java.sql.SQLException: Error parsing time stamp
+25 Mar 2024 10:40:19,229 TRACE ro.mpp2024.repository.FlightRepository 81 findAll - Exit with([])
+25 Mar 2024 10:40:19,230 TRACE ro.mpp2024.repository.FlightRepository 26 findOne - Enter
+25 Mar 2024 10:40:19,230 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:40:19,230 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+25 Mar 2024 10:40:19,232 ERROR ro.mpp2024.repository.FlightRepository 44 findOne - java.sql.SQLException: Error parsing time stamp
+25 Mar 2024 10:40:19,232 TRACE ro.mpp2024.repository.FlightRepository 48 findOne - Exit
+25 Mar 2024 10:40:19,232 TRACE ro.mpp2024.repository.FlightRepository 123 update - Enter saving task Flight{, destination='Barcelona', date=2024-04-19, airport='Barcelona Airport', noSeats=150}
+25 Mar 2024 10:40:19,232 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:40:19,233 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+25 Mar 2024 10:40:19,237 TRACE ro.mpp2024.repository.FlightRepository 131 update - updated 1 instances
+25 Mar 2024 10:40:19,237 TRACE ro.mpp2024.repository.FlightRepository 136 update - Exit
+25 Mar 2024 10:40:19,240 INFO  ro.mpp2024.repository.UserRepository 22 <init> - Initializing UserRepository with properties: {jdbc.user=, jdbc.url=jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db, jdbc.pass=}
+25 Mar 2024 10:40:19,240 TRACE ro.mpp2024.repository.UserRepository 52 findAll - Enter
+25 Mar 2024 10:40:19,240 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:40:19,240 TRACE ro.mpp2024.utils.JdbcUtils 26 getNewConnection - Enter
+25 Mar 2024 10:40:19,241 INFO  ro.mpp2024.utils.JdbcUtils 31 getNewConnection - trying to connect to database ... jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db
+25 Mar 2024 10:40:19,241 INFO  ro.mpp2024.utils.JdbcUtils 32 getNewConnection - user: 
+25 Mar 2024 10:40:19,242 INFO  ro.mpp2024.utils.JdbcUtils 33 getNewConnection - pass: 
+25 Mar 2024 10:40:19,244 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@4748a0f9)
+25 Mar 2024 10:40:19,248 TRACE ro.mpp2024.repository.UserRepository 65 findAll - Found all 1 instances
+25 Mar 2024 10:44:19,798 INFO  ro.mpp2024.repository.FlightRepository 20 <init> - Initializing FlightRepository with properties: {jdbc.user=, jdbc.url=jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db, jdbc.pass=} 
+25 Mar 2024 10:44:19,833 TRACE ro.mpp2024.repository.FlightRepository 89 save - Enter saving task Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}
+25 Mar 2024 10:44:19,834 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:44:19,834 TRACE ro.mpp2024.utils.JdbcUtils 26 getNewConnection - Enter
+25 Mar 2024 10:44:19,836 INFO  ro.mpp2024.utils.JdbcUtils 31 getNewConnection - trying to connect to database ... jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db
+25 Mar 2024 10:44:19,836 INFO  ro.mpp2024.utils.JdbcUtils 32 getNewConnection - user: 
+25 Mar 2024 10:44:19,836 INFO  ro.mpp2024.utils.JdbcUtils 33 getNewConnection - pass: 
+25 Mar 2024 10:44:20,164 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+25 Mar 2024 10:44:20,180 TRACE ro.mpp2024.repository.FlightRepository 97 save - saved 1 instances
+25 Mar 2024 10:44:20,181 TRACE ro.mpp2024.repository.FlightRepository 102 save - Exit
+25 Mar 2024 10:44:20,181 TRACE ro.mpp2024.repository.FlightRepository 56 findAll - Enter
+25 Mar 2024 10:44:20,181 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:44:20,182 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+25 Mar 2024 10:44:35,982 INFO  ro.mpp2024.repository.FlightRepository 20 <init> - Initializing FlightRepository with properties: {jdbc.user=, jdbc.url=jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db, jdbc.pass=} 
+25 Mar 2024 10:44:36,018 TRACE ro.mpp2024.repository.FlightRepository 89 save - Enter saving task Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}
+25 Mar 2024 10:44:36,019 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:44:36,019 TRACE ro.mpp2024.utils.JdbcUtils 26 getNewConnection - Enter
+25 Mar 2024 10:44:36,020 INFO  ro.mpp2024.utils.JdbcUtils 31 getNewConnection - trying to connect to database ... jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db
+25 Mar 2024 10:44:36,020 INFO  ro.mpp2024.utils.JdbcUtils 32 getNewConnection - user: 
+25 Mar 2024 10:44:36,020 INFO  ro.mpp2024.utils.JdbcUtils 33 getNewConnection - pass: 
+25 Mar 2024 10:44:36,359 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+25 Mar 2024 10:44:36,377 TRACE ro.mpp2024.repository.FlightRepository 97 save - saved 1 instances
+25 Mar 2024 10:44:36,378 TRACE ro.mpp2024.repository.FlightRepository 102 save - Exit
+25 Mar 2024 10:44:36,378 TRACE ro.mpp2024.repository.FlightRepository 56 findAll - Enter
+25 Mar 2024 10:44:36,379 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:44:36,379 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+25 Mar 2024 10:45:58,483 INFO  ro.mpp2024.repository.FlightRepository 20 <init> - Initializing FlightRepository with properties: {jdbc.user=, jdbc.url=jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db, jdbc.pass=} 
+25 Mar 2024 10:45:58,522 TRACE ro.mpp2024.repository.FlightRepository 89 save - Enter saving task Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}
+25 Mar 2024 10:45:58,522 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:45:58,523 TRACE ro.mpp2024.utils.JdbcUtils 26 getNewConnection - Enter
+25 Mar 2024 10:45:58,523 INFO  ro.mpp2024.utils.JdbcUtils 31 getNewConnection - trying to connect to database ... jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db
+25 Mar 2024 10:45:58,524 INFO  ro.mpp2024.utils.JdbcUtils 32 getNewConnection - user: 
+25 Mar 2024 10:45:58,525 INFO  ro.mpp2024.utils.JdbcUtils 33 getNewConnection - pass: 
+25 Mar 2024 10:45:58,855 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+25 Mar 2024 10:45:58,871 TRACE ro.mpp2024.repository.FlightRepository 97 save - saved 1 instances
+25 Mar 2024 10:45:58,872 TRACE ro.mpp2024.repository.FlightRepository 102 save - Exit
+25 Mar 2024 10:45:58,873 TRACE ro.mpp2024.repository.FlightRepository 56 findAll - Enter
+25 Mar 2024 10:45:58,873 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:45:58,873 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+25 Mar 2024 10:47:15,978 INFO  ro.mpp2024.repository.FlightRepository 20 <init> - Initializing FlightRepository with properties: {jdbc.user=, jdbc.url=jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db, jdbc.pass=} 
+25 Mar 2024 10:47:16,024 TRACE ro.mpp2024.repository.FlightRepository 89 save - Enter saving task Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}
+25 Mar 2024 10:47:16,025 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:47:16,025 TRACE ro.mpp2024.utils.JdbcUtils 26 getNewConnection - Enter
+25 Mar 2024 10:47:16,026 INFO  ro.mpp2024.utils.JdbcUtils 31 getNewConnection - trying to connect to database ... jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db
+25 Mar 2024 10:47:16,026 INFO  ro.mpp2024.utils.JdbcUtils 32 getNewConnection - user: 
+25 Mar 2024 10:47:16,027 INFO  ro.mpp2024.utils.JdbcUtils 33 getNewConnection - pass: 
+25 Mar 2024 10:47:16,355 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+25 Mar 2024 10:47:16,372 TRACE ro.mpp2024.repository.FlightRepository 97 save - saved 1 instances
+25 Mar 2024 10:47:16,373 TRACE ro.mpp2024.repository.FlightRepository 102 save - Exit
+25 Mar 2024 10:47:16,373 TRACE ro.mpp2024.repository.FlightRepository 56 findAll - Enter
+25 Mar 2024 10:47:16,374 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:47:16,374 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+25 Mar 2024 10:47:30,649 INFO  ro.mpp2024.repository.FlightRepository 20 <init> - Initializing FlightRepository with properties: {jdbc.user=, jdbc.url=jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db, jdbc.pass=} 
+25 Mar 2024 10:47:30,688 TRACE ro.mpp2024.repository.FlightRepository 89 save - Enter saving task Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}
+25 Mar 2024 10:47:30,688 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:47:30,689 TRACE ro.mpp2024.utils.JdbcUtils 26 getNewConnection - Enter
+25 Mar 2024 10:47:30,689 INFO  ro.mpp2024.utils.JdbcUtils 31 getNewConnection - trying to connect to database ... jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db
+25 Mar 2024 10:47:30,689 INFO  ro.mpp2024.utils.JdbcUtils 32 getNewConnection - user: 
+25 Mar 2024 10:47:30,690 INFO  ro.mpp2024.utils.JdbcUtils 33 getNewConnection - pass: 
+25 Mar 2024 10:47:31,039 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+25 Mar 2024 10:47:31,055 TRACE ro.mpp2024.repository.FlightRepository 97 save - saved 1 instances
+25 Mar 2024 10:47:31,056 TRACE ro.mpp2024.repository.FlightRepository 102 save - Exit
+25 Mar 2024 10:47:31,057 TRACE ro.mpp2024.repository.FlightRepository 56 findAll - Enter
+25 Mar 2024 10:47:31,057 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:47:31,058 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+25 Mar 2024 10:52:25,151 INFO  ro.mpp2024.repository.FlightRepository 20 <init> - Initializing FlightRepository with properties: {jdbc.user=, jdbc.url=jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db, jdbc.pass=} 
+25 Mar 2024 10:52:25,190 TRACE ro.mpp2024.repository.FlightRepository 89 save - Enter saving task Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}
+25 Mar 2024 10:52:25,190 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:52:25,190 TRACE ro.mpp2024.utils.JdbcUtils 26 getNewConnection - Enter
+25 Mar 2024 10:52:25,190 INFO  ro.mpp2024.utils.JdbcUtils 31 getNewConnection - trying to connect to database ... jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db
+25 Mar 2024 10:52:25,191 INFO  ro.mpp2024.utils.JdbcUtils 32 getNewConnection - user: 
+25 Mar 2024 10:52:25,191 INFO  ro.mpp2024.utils.JdbcUtils 33 getNewConnection - pass: 
+25 Mar 2024 10:52:25,531 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+25 Mar 2024 10:52:25,549 TRACE ro.mpp2024.repository.FlightRepository 97 save - saved 1 instances
+25 Mar 2024 10:52:25,550 TRACE ro.mpp2024.repository.FlightRepository 102 save - Exit
+25 Mar 2024 10:52:25,551 TRACE ro.mpp2024.repository.FlightRepository 56 findAll - Enter
+25 Mar 2024 10:52:25,551 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:52:25,551 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+25 Mar 2024 10:52:56,584 INFO  ro.mpp2024.repository.FlightRepository 20 <init> - Initializing FlightRepository with properties: {jdbc.user=, jdbc.url=jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db, jdbc.pass=} 
+25 Mar 2024 10:53:04,378 TRACE ro.mpp2024.repository.FlightRepository 89 save - Enter saving task Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}
+25 Mar 2024 10:53:05,235 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:53:05,237 TRACE ro.mpp2024.utils.JdbcUtils 26 getNewConnection - Enter
+25 Mar 2024 10:53:05,240 INFO  ro.mpp2024.utils.JdbcUtils 31 getNewConnection - trying to connect to database ... jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db
+25 Mar 2024 10:53:05,250 INFO  ro.mpp2024.utils.JdbcUtils 32 getNewConnection - user: 
+25 Mar 2024 10:53:05,254 INFO  ro.mpp2024.utils.JdbcUtils 33 getNewConnection - pass: 
+25 Mar 2024 10:53:07,065 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@47f9738)
+25 Mar 2024 10:53:20,721 TRACE ro.mpp2024.repository.FlightRepository 97 save - saved 1 instances
+25 Mar 2024 10:53:26,640 TRACE ro.mpp2024.repository.FlightRepository 102 save - Exit
+25 Mar 2024 10:53:32,507 TRACE ro.mpp2024.repository.FlightRepository 56 findAll - Enter
+25 Mar 2024 10:53:32,510 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:53:32,512 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@47f9738)
+25 Mar 2024 10:53:41,211 INFO  ro.mpp2024.repository.FlightRepository 20 <init> - Initializing FlightRepository with properties: {jdbc.user=, jdbc.url=jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db, jdbc.pass=} 
+25 Mar 2024 10:53:41,252 TRACE ro.mpp2024.repository.FlightRepository 89 save - Enter saving task Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}
+25 Mar 2024 10:53:41,252 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:53:41,253 TRACE ro.mpp2024.utils.JdbcUtils 26 getNewConnection - Enter
+25 Mar 2024 10:53:41,253 INFO  ro.mpp2024.utils.JdbcUtils 31 getNewConnection - trying to connect to database ... jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db
+25 Mar 2024 10:53:41,254 INFO  ro.mpp2024.utils.JdbcUtils 32 getNewConnection - user: 
+25 Mar 2024 10:53:41,254 INFO  ro.mpp2024.utils.JdbcUtils 33 getNewConnection - pass: 
+25 Mar 2024 10:53:41,604 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@47f9738)
+25 Mar 2024 10:53:41,623 TRACE ro.mpp2024.repository.FlightRepository 97 save - saved 1 instances
+25 Mar 2024 10:53:41,624 TRACE ro.mpp2024.repository.FlightRepository 102 save - Exit
+25 Mar 2024 10:53:44,399 TRACE ro.mpp2024.repository.FlightRepository 56 findAll - Enter
+25 Mar 2024 10:53:44,911 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:53:44,913 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@47f9738)
+25 Mar 2024 10:56:16,310 INFO  ro.mpp2024.repository.FlightRepository 20 <init> - Initializing FlightRepository with properties: {jdbc.user=, jdbc.url=jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db, jdbc.pass=} 
+25 Mar 2024 10:56:16,349 TRACE ro.mpp2024.repository.FlightRepository 89 save - Enter saving task Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}
+25 Mar 2024 10:56:16,350 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:56:16,351 TRACE ro.mpp2024.utils.JdbcUtils 26 getNewConnection - Enter
+25 Mar 2024 10:56:16,351 INFO  ro.mpp2024.utils.JdbcUtils 31 getNewConnection - trying to connect to database ... jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db
+25 Mar 2024 10:56:16,352 INFO  ro.mpp2024.utils.JdbcUtils 32 getNewConnection - user: 
+25 Mar 2024 10:56:16,352 INFO  ro.mpp2024.utils.JdbcUtils 33 getNewConnection - pass: 
+25 Mar 2024 10:56:16,703 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@47f9738)
+25 Mar 2024 10:56:16,722 TRACE ro.mpp2024.repository.FlightRepository 97 save - saved 1 instances
+25 Mar 2024 10:56:16,723 TRACE ro.mpp2024.repository.FlightRepository 102 save - Exit
+25 Mar 2024 10:56:21,006 TRACE ro.mpp2024.repository.FlightRepository 56 findAll - Enter
+25 Mar 2024 10:56:21,369 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:56:21,371 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@47f9738)
+25 Mar 2024 10:56:43,914 TRACE ro.mpp2024.repository.FlightRepository 75 findAll - found all [Flight{, destination='Barcelona', date=2024-03-26, airport='Barcelona El Prat', noSeats=150}, Flight{, destination='Vienna', date=2024-03-27, airport='Vienna Airport', noSeats=120}, Flight{, destination='Bergamo', date=2024-03-27, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}] instances
+25 Mar 2024 10:57:55,908 INFO  ro.mpp2024.repository.FlightRepository 20 <init> - Initializing FlightRepository with properties: {jdbc.user=, jdbc.url=jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db, jdbc.pass=} 
+25 Mar 2024 10:57:55,918 TRACE ro.mpp2024.repository.FlightRepository 108 delete - Enter saving task of id 18
+25 Mar 2024 10:57:55,918 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:57:55,918 TRACE ro.mpp2024.utils.JdbcUtils 26 getNewConnection - Enter
+25 Mar 2024 10:57:55,918 INFO  ro.mpp2024.utils.JdbcUtils 31 getNewConnection - trying to connect to database ... jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db
+25 Mar 2024 10:57:55,919 INFO  ro.mpp2024.utils.JdbcUtils 32 getNewConnection - user: 
+25 Mar 2024 10:57:55,920 INFO  ro.mpp2024.utils.JdbcUtils 33 getNewConnection - pass: 
+25 Mar 2024 10:57:56,238 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@39a2bb97)
+25 Mar 2024 10:57:56,252 TRACE ro.mpp2024.repository.FlightRepository 114 delete - deleted 1 instances
+25 Mar 2024 10:57:56,252 TRACE ro.mpp2024.repository.FlightRepository 119 delete - Exit
+25 Mar 2024 10:57:56,253 TRACE ro.mpp2024.repository.FlightRepository 56 findAll - Enter
+25 Mar 2024 10:57:56,253 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:57:56,254 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@39a2bb97)
+25 Mar 2024 10:57:56,289 TRACE ro.mpp2024.repository.FlightRepository 75 findAll - found all [Flight{, destination='Barcelona', date=2024-03-26, airport='Barcelona El Prat', noSeats=150}, Flight{, destination='Vienna', date=2024-03-27, airport='Vienna Airport', noSeats=120}, Flight{, destination='Bergamo', date=2024-03-27, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}] instances
+25 Mar 2024 10:58:17,086 INFO  ro.mpp2024.repository.FlightRepository 20 <init> - Initializing FlightRepository with properties: {jdbc.user=, jdbc.url=jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db, jdbc.pass=} 
+25 Mar 2024 10:58:17,094 TRACE ro.mpp2024.repository.FlightRepository 108 delete - Enter saving task of id 19
+25 Mar 2024 10:58:17,095 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:58:17,095 TRACE ro.mpp2024.utils.JdbcUtils 26 getNewConnection - Enter
+25 Mar 2024 10:58:17,095 INFO  ro.mpp2024.utils.JdbcUtils 31 getNewConnection - trying to connect to database ... jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db
+25 Mar 2024 10:58:17,095 INFO  ro.mpp2024.utils.JdbcUtils 32 getNewConnection - user: 
+25 Mar 2024 10:58:17,097 INFO  ro.mpp2024.utils.JdbcUtils 33 getNewConnection - pass: 
+25 Mar 2024 10:58:17,419 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@39a2bb97)
+25 Mar 2024 10:58:17,433 TRACE ro.mpp2024.repository.FlightRepository 114 delete - deleted 1 instances
+25 Mar 2024 10:58:17,434 TRACE ro.mpp2024.repository.FlightRepository 119 delete - Exit
+25 Mar 2024 10:58:17,434 TRACE ro.mpp2024.repository.FlightRepository 56 findAll - Enter
+25 Mar 2024 10:58:17,435 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:58:17,435 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@39a2bb97)
+25 Mar 2024 10:58:17,470 TRACE ro.mpp2024.repository.FlightRepository 75 findAll - found all [Flight{, destination='Barcelona', date=2024-03-26, airport='Barcelona El Prat', noSeats=150}, Flight{, destination='Vienna', date=2024-03-27, airport='Vienna Airport', noSeats=120}, Flight{, destination='Bergamo', date=2024-03-27, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}, Flight{, destination='Bergamo', date=2024-03-19, airport='Milano Bergamo', noSeats=100}] instances
+25 Mar 2024 10:59:09,833 INFO  ro.mpp2024.repository.FlightRepository 20 <init> - Initializing FlightRepository with properties: {jdbc.user=, jdbc.url=jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db, jdbc.pass=} 
+25 Mar 2024 10:59:09,843 TRACE ro.mpp2024.repository.FlightRepository 26 findOne - Enter
+25 Mar 2024 10:59:09,843 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:59:09,844 TRACE ro.mpp2024.utils.JdbcUtils 26 getNewConnection - Enter
+25 Mar 2024 10:59:09,844 INFO  ro.mpp2024.utils.JdbcUtils 31 getNewConnection - trying to connect to database ... jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db
+25 Mar 2024 10:59:09,845 INFO  ro.mpp2024.utils.JdbcUtils 32 getNewConnection - user: 
+25 Mar 2024 10:59:09,845 INFO  ro.mpp2024.utils.JdbcUtils 33 getNewConnection - pass: 
+25 Mar 2024 10:59:10,168 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7749bf93)
+25 Mar 2024 10:59:10,209 TRACE ro.mpp2024.repository.FlightRepository 40 findOne - found Flight{, destination='Barcelona', date=2024-03-26, airport='Barcelona El Prat', noSeats=150} instances
+25 Mar 2024 10:59:50,396 INFO  ro.mpp2024.repository.FlightRepository 20 <init> - Initializing FlightRepository with properties: {jdbc.user=, jdbc.url=jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db, jdbc.pass=} 
+25 Mar 2024 10:59:50,433 TRACE ro.mpp2024.repository.FlightRepository 125 update - Enter saving task Flight{, destination='Barcelona', date=2024-04-19, airport='Barcelona Airport', noSeats=150}
+25 Mar 2024 10:59:50,433 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 10:59:50,434 TRACE ro.mpp2024.utils.JdbcUtils 26 getNewConnection - Enter
+25 Mar 2024 10:59:50,434 INFO  ro.mpp2024.utils.JdbcUtils 31 getNewConnection - trying to connect to database ... jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db
+25 Mar 2024 10:59:50,435 INFO  ro.mpp2024.utils.JdbcUtils 32 getNewConnection - user: 
+25 Mar 2024 10:59:50,435 INFO  ro.mpp2024.utils.JdbcUtils 33 getNewConnection - pass: 
+25 Mar 2024 10:59:50,755 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+25 Mar 2024 10:59:50,769 TRACE ro.mpp2024.repository.FlightRepository 133 update - updated 1 instances
+25 Mar 2024 10:59:50,770 TRACE ro.mpp2024.repository.FlightRepository 138 update - Exit
+25 Mar 2024 11:01:04,964 INFO  ro.mpp2024.repository.FlightRepository 20 <init> - Initializing FlightRepository with properties: {jdbc.user=, jdbc.url=jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db, jdbc.pass=} 
+25 Mar 2024 11:01:05,001 TRACE ro.mpp2024.repository.FlightRepository 125 update - Enter saving task Flight{, destination='Barcelona', date=2024-04-19, airport='Barcelona Airport', noSeats=150}
+25 Mar 2024 11:01:05,002 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+25 Mar 2024 11:01:05,002 TRACE ro.mpp2024.utils.JdbcUtils 26 getNewConnection - Enter
+25 Mar 2024 11:01:05,002 INFO  ro.mpp2024.utils.JdbcUtils 31 getNewConnection - trying to connect to database ... jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db
+25 Mar 2024 11:01:05,003 INFO  ro.mpp2024.utils.JdbcUtils 32 getNewConnection - user: 
+25 Mar 2024 11:01:05,004 INFO  ro.mpp2024.utils.JdbcUtils 33 getNewConnection - pass: 
+25 Mar 2024 11:01:05,349 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7ca20101)
+25 Mar 2024 11:01:05,366 TRACE ro.mpp2024.repository.FlightRepository 133 update - updated 1 instances
+25 Mar 2024 11:01:05,366 TRACE ro.mpp2024.repository.FlightRepository 138 update - Exit

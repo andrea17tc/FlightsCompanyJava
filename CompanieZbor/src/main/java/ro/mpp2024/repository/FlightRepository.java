@@ -6,6 +6,7 @@ import ro.mpp2024.utils.JdbcUtils;
 import ro.mpp2024.model.Flight;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -30,10 +31,11 @@ public class FlightRepository implements Repository<Integer, Flight>{
             ResultSet resultSet = statement.executeQuery();
             if(resultSet.next()) {
                 String destination = resultSet.getString("destination");
-                Date date = resultSet.getDate("date");
+                String date = resultSet.getString("date");
+                LocalDate d = LocalDate.parse(date);
                 String airport = resultSet.getString("airport");
                 Integer noSeats = resultSet.getInt("noTotalSeats");
-                Flight f = new Flight(destination,date,airport,noSeats);
+                Flight f = new Flight(destination,d,airport,noSeats);
                 f.setId(integer);
                 logger.trace("found {} instances", f);
                 return Optional.ofNullable(f);
@@ -60,7 +62,8 @@ public class FlightRepository implements Repository<Integer, Flight>{
             while (resultSet.next())
             {
                 Integer id= resultSet.getInt("id");
-                Date date=resultSet.getDate("date");
+                String d= resultSet.getString("date");
+                LocalDate date = LocalDate.parse(d);
                 String destination= resultSet.getString("destination");
                 String aiport = resultSet.getString("airport");
                 Integer noTotalSeats =resultSet.getInt("noTotalSeats");
@@ -87,7 +90,7 @@ public class FlightRepository implements Repository<Integer, Flight>{
         Connection connection = dbUtils.getConnection();
         try (PreparedStatement preparedStatement = connection.prepareStatement("insert into flight(destination, date, airport, noTotalSeats) values (?,?,?,?)")) {
             preparedStatement.setString(1, entity.getDestination());
-            preparedStatement.setDate(2, entity.getDate());
+            preparedStatement.setString(2, entity.getDate().toString());
             preparedStatement.setString(3, entity.getAirport());
             preparedStatement.setInt(4, entity.getNoTotalSeats());
             int result = preparedStatement.executeUpdate();
@@ -121,9 +124,9 @@ public class FlightRepository implements Repository<Integer, Flight>{
     public Optional<Flight> update(Integer id, Flight entity) {
         logger.traceEntry("saving task {}", entity);
         Connection connection= dbUtils.getConnection();
-        try(PreparedStatement preparedStatement=connection.prepareStatement("update flight set date=? and airport=? where id=?"))
+        try(PreparedStatement preparedStatement=connection.prepareStatement("update flight set date=?, airport=? where id=?"))
         {
-            preparedStatement.setDate(1, entity.getDate());
+            preparedStatement.setString(1, (entity.getDate().toString()));
             preparedStatement.setString(2,entity.getAirport());
             preparedStatement.setInt(3, id);
             int result = preparedStatement.executeUpdate();
