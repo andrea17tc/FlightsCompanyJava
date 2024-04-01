@@ -1,0 +1,13 @@
+õ01 Apr 2024 21:58:20,955 INFO  ro.mpp2024.repository.FlightRepository 21 <init> - Initializing FlightRepository with properties: {jdbc.user=, jdbc.url=jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db, jdbc.pass=} 
+¥01 Apr 2024 21:58:21,004 TRACE ro.mpp2024.repository.FlightRepository 157 save - Enter saving task Flight to Paris on 2021-05-05 from Otopeni. Seats available: 100
+T01 Apr 2024 21:58:21,005 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+W01 Apr 2024 21:58:21,006 TRACE ro.mpp2024.utils.JdbcUtils 26 getNewConnection - Enter
+Â01 Apr 2024 21:58:21,007 INFO  ro.mpp2024.utils.JdbcUtils 31 getNewConnection - trying to connect to database ... jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db
+X01 Apr 2024 21:58:21,008 INFO  ro.mpp2024.utils.JdbcUtils 32 getNewConnection - user: 
+X01 Apr 2024 21:58:21,009 INFO  ro.mpp2024.utils.JdbcUtils 33 getNewConnection - pass: 
+‚01 Apr 2024 21:58:21,232 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@aa21042)
+d01 Apr 2024 21:58:21,249 TRACE ro.mpp2024.repository.FlightRepository 165 save - saved 1 instances
+W01 Apr 2024 21:58:21,250 TRACE ro.mpp2024.repository.FlightRepository 170 save - Exit
+Z01 Apr 2024 21:58:21,251 TRACE ro.mpp2024.repository.FlightRepository 27 findOne - Enter
+T01 Apr 2024 21:58:21,252 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+‚01 Apr 2024 21:58:21,252 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@aa21042)
