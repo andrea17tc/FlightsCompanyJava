@@ -7,6 +7,7 @@ import ro.mpp2024.model.Flight;
 
 import java.sql.*;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -34,11 +35,11 @@ public class FlightRepository implements Repository<Integer, Flight>{
                 String date = resultSet.getString("date");
                 LocalDate d = LocalDate.parse(date);
                 String airport = resultSet.getString("airport");
-                Integer noSeats = resultSet.getInt("noTotalSeats");
+                int noSeats = resultSet.getInt("noTotalSeats");
                 Flight f = new Flight(destination,d,airport,noSeats);
                 f.setId(integer);
                 logger.trace("found {} instances", f);
-                return Optional.ofNullable(f);
+                return Optional.of(f);
             }
         }
         catch (SQLException ex) {
@@ -63,11 +64,78 @@ public class FlightRepository implements Repository<Integer, Flight>{
             {
                 Integer id= resultSet.getInt("id");
                 String d= resultSet.getString("date");
-                LocalDate date = LocalDate.parse(d);
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+                LocalDate date = LocalDate.parse(d,formatter);
                 String destination= resultSet.getString("destination");
-                String aiport = resultSet.getString("airport");
-                Integer noTotalSeats =resultSet.getInt("noTotalSeats");
-                Flight f = new Flight(destination,date,aiport,noTotalSeats);
+                String airport = resultSet.getString("airport");
+                int noTotalSeats =resultSet.getInt("noTotalSeats");
+                Flight f = new Flight(destination,date,airport,noTotalSeats);
+                f.setId(id);
+                flights.add(f);
+
+            }
+            logger.trace("found all {} instances", flights);
+            return flights;
+
+        }catch(SQLException ex){
+            logger.error(ex);
+            System.err.println("Error DB" + ex);
+
+        }
+        logger.traceExit(flights);
+        return flights;
+    }
+
+    public Iterable<Flight> findAllAvailableFlights(){
+        logger.traceEntry();
+        Connection con =dbUtils.getConnection();
+        List<Flight> flights = new ArrayList<>();
+        try (PreparedStatement statement = con.prepareStatement("select * from flight where noTotalSeats>0;");
+             ResultSet resultSet = statement.executeQuery()
+        ) {
+            while (resultSet.next())
+            {
+                Integer id= resultSet.getInt("id");
+                String d= resultSet.getString("date");
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+                LocalDate date = LocalDate.parse(d,formatter);
+                String destination= resultSet.getString("destination");
+                String airport = resultSet.getString("airport");
+                int noTotalSeats =resultSet.getInt("noTotalSeats");
+                Flight f = new Flight(destination,date,airport,noTotalSeats);
+                f.setId(id);
+                flights.add(f);
+
+            }
+            logger.trace("found all {} instances", flights);
+            return flights;
+
+        }catch(SQLException ex){
+            logger.error(ex);
+            System.err.println("Error DB" + ex);
+
+        }
+        logger.traceExit(flights);
+        return flights;
+    }
+
+    public Iterable<Flight> findAllFlightsByDestinationAndDate(String destination, LocalDate date){
+        logger.traceEntry();
+        Connection con =dbUtils.getConnection();
+        String dateString = date.getDayOfMonth() + "-" + date.getMonth() + "-" + date.getYear();
+        List<Flight> flights = new ArrayList<>();
+        try (PreparedStatement statement = con.prepareStatement("select * from flight where destination=? and date=?;");
+             ResultSet resultSet = statement.executeQuery()
+        ) {
+            statement.setString(1,destination);
+            statement.setString(2,dateString);
+            while (resultSet.next())
+            {
+                Integer id= resultSet.getInt("id");
+                String dest= resultSet.getString("destination");
+                String airport = resultSet.getString("airport");
+                int noTotalSeats =resultSet.getInt("noTotalSeats");
+                Flight f = new Flight(dest,date,airport,noTotalSeats);
                 f.setId(id);
                 flights.add(f);
 
@@ -100,7 +168,7 @@ public class FlightRepository implements Repository<Integer, Flight>{
             System.err.println("Error DB" + ex);
         }
         logger.traceExit();
-        return null;
+        return Optional.empty();
     }
 
     @Override
@@ -117,7 +185,7 @@ public class FlightRepository implements Repository<Integer, Flight>{
             System.err.println("Error DB" + ex);
         }
         logger.traceExit();
-        return null;
+        return Optional.empty();
     }
 
     @Override
@@ -136,6 +204,22 @@ public class FlightRepository implements Repository<Integer, Flight>{
             System.err.println("Error DB" + ex);
         }
         logger.traceExit();
-        return null;
+        return Optional.empty();
+    }
+
+    public void updateSeats(Integer id, int seats) {
+        logger.traceEntry("saving task {}", seats);
+        Connection connection= dbUtils.getConnection();
+        try(PreparedStatement preparedStatement=connection.prepareStatement("update flight set noTotalSeats=? where id=?"))
+        {
+            preparedStatement.setInt(1, seats);
+            preparedStatement.setInt(2, id);
+            int result = preparedStatement.executeUpdate();
+            logger.trace("updated {} instances", result);
+        }catch(SQLException ex){
+            logger.error(ex);
+            System.err.println("Error DB" + ex);
+        }
+        logger.traceExit();
     }
 }

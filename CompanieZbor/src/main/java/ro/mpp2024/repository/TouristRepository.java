@@ -47,6 +47,26 @@ public class TouristRepository implements Repository<Integer,Tourist> {
         return Optional.empty();
     }
 
+    public Optional<Tourist> findTouristByName(String name) {
+        logger.traceEntry();
+        Connection con = dbUtils.getConnection();
+        try (PreparedStatement statement = con.prepareStatement("SELECT * FROM tourist WHERE name=?")) {
+            statement.setString(1, name);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                int touristid = resultSet.getInt("id");
+                Tourist tourist = new Tourist(name);
+                tourist.setId(touristid);
+                logger.trace("Found {} instances", tourist);
+                return Optional.of(tourist);
+            }
+        } catch (SQLException ex) {
+            logger.error(ex);
+            System.err.println("Error DB" + ex);
+        }
+        logger.traceExit();
+        return Optional.empty();
+    }
     @Override
     public Iterable<Tourist> findAll() {
         logger.traceEntry();

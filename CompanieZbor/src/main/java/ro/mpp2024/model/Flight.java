@@ -68,11 +68,6 @@ public class Flight extends Entity<Integer> {
 
     @Override
     public String toString() {
-        return "Flight{" +
-                ", destination='" + destination + '\'' +
-                ", date=" + date +
-                ", airport='" + airport + '\'' +
-                ", noSeats=" + noTotalSeats +
-                '}';
+        return "Flight to "  + destination +" on " + date + " from " + airport + ". Seats available: "+ noTotalSeats;
     }
 }
