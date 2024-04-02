@@ -12,12 +12,14 @@ import java.util.Properties;
 public class RepoTests {
     @Test
     public void testAdd() throws IOException {
-//        Properties props= new Properties();
-//        props.load(new FileReader("bd.config"));
-//        FlightRepository flightRepository = new FlightRepository(props);
-//        LocalDate d = LocalDate.parse("2021-05-05");
-//        Flight f = new Flight("Paris", d, "Otopeni", 100);
-//        flightRepository.save(f);
-//        assert(flightRepository.findOne(f.getId()).get().getDate().equals(LocalDate.parse("2021-05-05")));
+        Properties props= new Properties();
+        props.load(new FileReader("bd.config"));
+        FlightRepository flightRepository = new FlightRepository(props);
+        LocalDate d = LocalDate.parse("2021-05-05");
+        Flight f = new Flight("Paris", d, "Otopeni", 100);
+        //flightRepository.save(f);
+        f.setId(32);
+        assert(flightRepository.findOne(f.getId()).get().getDate().equals(LocalDate.parse("2021-05-05")));
+        assert(flightRepository.findAllFlightsByDestinationAndDate("Paris", LocalDate.parse("2021-05-05")).iterator().next().getAirport().equals("Otopeni"));
     }
 }

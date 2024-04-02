@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ServiceTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-04-02T16:36:28" hostname="ANDREA-PC" time="0.417">
+  <properties/>
+  <testcase name="testAdd()" classname="ServiceTests" time="0.417"/>
+  <system-out><![CDATA[02 Apr 2024 19:36:28,803 INFO  ro.mpp2024.repository.FlightRepository 21 <init> - Initializing FlightRepository with properties: {jdbc.user=, jdbc.url=jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db, jdbc.pass=} 
+02 Apr 2024 19:36:28,808 INFO  ro.mpp2024.repository.UserRepository 22 <init> - Initializing UserRepository with properties: {jdbc.user=, jdbc.url=jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db, jdbc.pass=}
+02 Apr 2024 19:36:28,809 INFO  ro.mpp2024.repository.TouristRepository 23 <init> - Initializing TouristRepository with properties: {jdbc.user=, jdbc.url=jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db, jdbc.pass=}
+02 Apr 2024 19:36:28,809 INFO  ro.mpp2024.repository.PurchaseRepository 30 <init> - Initializing PurchaseRepository with properties: {jdbc.user=, jdbc.url=jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db, jdbc.pass=}
+02 Apr 2024 19:36:28,810 INFO  ro.mpp2024.repository.TripRepository 28 <init> - Initializing TripRepository with properties: {jdbc.user=, jdbc.url=jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db, jdbc.pass=}
+02 Apr 2024 19:36:28,811 TRACE ro.mpp2024.repository.FlightRepository 27 findOne - Enter
+02 Apr 2024 19:36:28,811 TRACE ro.mpp2024.utils.JdbcUtils 49 getConnection - Enter
+02 Apr 2024 19:36:28,811 TRACE ro.mpp2024.utils.JdbcUtils 26 getNewConnection - Enter
+02 Apr 2024 19:36:28,811 INFO  ro.mpp2024.utils.JdbcUtils 31 getNewConnection - trying to connect to database ... jdbc:sqlite:C:/Users/Andrea/IdeaProjects/mpp-proiect-java-andrea17tc/flight.db
+02 Apr 2024 19:36:28,811 INFO  ro.mpp2024.utils.JdbcUtils 32 getNewConnection - user: 
+02 Apr 2024 19:36:28,812 INFO  ro.mpp2024.utils.JdbcUtils 33 getNewConnection - pass: 
+02 Apr 2024 19:36:28,894 TRACE ro.mpp2024.utils.JdbcUtils 58 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@705202d1)
+02 Apr 2024 19:36:28,909 TRACE ro.mpp2024.repository.FlightRepository 41 findOne - found Flight to Barcelona on 2024-04-19 from Barcelona Airport. Seats available: 150 instances
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

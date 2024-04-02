@@ -1,9 +1,17 @@
 package ro.mpp2024.controller;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+import ro.mpp2024.Main;
 import ro.mpp2024.model.Flight;
 import ro.mpp2024.service.Service;
+
+import javax.swing.*;
+import java.io.IOException;
 
 public class SearchController {
     public ComboBox comboBoxDestinations;
@@ -33,24 +41,60 @@ public class SearchController {
     public void SearchButtonClicked(ActionEvent actionEvent) {
         String destination = comboBoxDestinations.getValue().toString();
         System.out.println(datePicker.getValue());
-        if(service.findAllFlightsByDestinationAndDate(destination, datePicker.getValue()).spliterator().getExactSizeIfKnown() == 0)
+        if(destination == null || datePicker.getValue() == null)
         {
-            listView.visibleProperty().setValue(false);
-            labelAllFlights.visibleProperty().setValue(true);
-            Label label = new Label("No flights available for this destination and date");
-            labelAllFlights.setLayoutX(64);
-            labelAllFlights.setLayoutY(129);
-            labelAllFlights.setPrefHeight(17);
-            //add label to the pane
-            labelAllFlights.getChildrenUnmodifiable().add(label);
-
+            JOptionPane.showMessageDialog(null, "Please select a destination and a date!");
         }
-        else
-            listView.getItems().setAll(service.findAllFlightsByDestinationAndDate(destination, datePicker.getValue()));
+        else{
+            if(service.findAllFlightsByDestinationAndDate(destination, datePicker.getValue()).spliterator().getExactSizeIfKnown() == 0)
+            {
+                listView.visibleProperty().setValue(false);
+                labelAllFlights.setText("No available flights for this destination and date!");
+                labelAllFlights.textFillProperty().setValue(Color.RED);
+                labelAllFlights.fontProperty().setValue(javafx.scene.text.Font.font(20));
+                labelAllFlights.visibleProperty().setValue(true);
+            }
+            else{
+                listView.getItems().clear();
+                listView.visibleProperty().setValue(true);
+                labelAllFlights.visibleProperty().setValue(false);
+                for (Flight flight: service.findAllFlightsByDestinationAndDate(destination, datePicker.getValue())) {
+                    listView.getItems().add(flight);
+                }
+            }
+        }
+
 
     }
 
-    public void BookButtonClicked(ActionEvent actionEvent) {
+    public void BookButtonClicked(ActionEvent actionEvent) throws IOException {
+        Flight flight = (Flight) listView.getSelectionModel().getSelectedItem();
+        if(flight == null)
+        {
+            JOptionPane.showMessageDialog(null, "Please select a flight!");
+        }
+        else{
+            service.setFlightID(flight.getId());
+            openWindow();
 
+        }
+    }
+
+    private void openWindow() throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("BookView.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Book flight");
+        BookController bookController = fxmlLoader.getController();
+        bookController.setService(service);
+        stage.setScene(scene);
+        stage.show();
+        //this.closeWindow();
+
+    }
+
+    public void LogoutButtonClicked(ActionEvent actionEvent) {
+        Stage stage = (Stage) buttonSearch.getScene().getWindow();
+        stage.close();
     }
 }

@@ -97,7 +97,7 @@ public class FlightRepository implements Repository<Integer, Flight>{
             {
                 Integer id= resultSet.getInt("id");
                 String d= resultSet.getString("date");
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
                 LocalDate date = LocalDate.parse(d,formatter);
                 String destination= resultSet.getString("destination");
                 String airport = resultSet.getString("airport");
@@ -122,13 +122,12 @@ public class FlightRepository implements Repository<Integer, Flight>{
     public Iterable<Flight> findAllFlightsByDestinationAndDate(String destination, LocalDate date){
         logger.traceEntry();
         Connection con =dbUtils.getConnection();
-        String dateString = date.getDayOfMonth() + "-" + date.getMonth() + "-" + date.getYear();
         List<Flight> flights = new ArrayList<>();
         try (PreparedStatement statement = con.prepareStatement("select * from flight where destination=? and date=?;");
-             ResultSet resultSet = statement.executeQuery()
         ) {
             statement.setString(1,destination);
-            statement.setString(2,dateString);
+            statement.setString(2,date.toString());
+            ResultSet resultSet = statement.executeQuery();
             while (resultSet.next())
             {
                 Integer id= resultSet.getInt("id");

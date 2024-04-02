@@ -143,4 +143,31 @@ public class PurchaseRepository implements Repository<Integer,Purchase>{
         logger.traceExit();
         return null;
     }
+
+    public Optional<Purchase> findByClientAndFlight(int flightID, int touristID) {
+        logger.traceEntry();
+        Connection con = dbUtils.getConnection();
+        try (PreparedStatement statement = con.prepareStatement("SELECT * FROM purchase WHERE flightID=? AND touristID=?")) {
+            statement.setInt(1, flightID);
+            statement.setInt(2, touristID);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                int userID = resultSet.getInt("userID");
+                String clientAdress = resultSet.getString("clientAdress");
+                Flight f = flightRepository.findOne(flightID).get();
+                User u = userRepository.findOne(userID).get();
+                Tourist t = touristRepository.findOne(touristID).get();
+                Purchase p = new Purchase(f,u,t,clientAdress);
+                p.setId(id);
+                logger.trace("Found {} instances", p);
+                return Optional.of(p);
+            }
+        } catch (SQLException ex) {
+            logger.error(ex);
+            System.err.println("Error DB" + ex);
+        }
+        logger.traceExit();
+        return Optional.empty();
+    }
 }

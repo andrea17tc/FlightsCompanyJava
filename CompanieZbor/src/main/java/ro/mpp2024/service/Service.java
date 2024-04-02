@@ -9,14 +9,14 @@ import java.util.List;
 import java.util.Objects;
 
 public class Service {
-    FlightRepository flightRepository;
-    PurchaseRepository purchaseRepository;
-    TouristRepository touristRepository;
-    TripRepository tripRepository;
-    UserRepository userRepository;
-    int userID;
-    int flightID=0;
-    int touristID=0;
+    private FlightRepository flightRepository;
+    private PurchaseRepository purchaseRepository;
+    private TouristRepository touristRepository;
+    private TripRepository tripRepository;
+    private UserRepository userRepository;
+    private int userID;
+    private int flightID=0;
+    private int touristID=0;
 
     public Service(FlightRepository flightRepository, PurchaseRepository purchaseRepository, TouristRepository touristRepository, TripRepository tripRepository, UserRepository userRepository) {
         this.flightRepository = flightRepository;
@@ -26,6 +26,9 @@ public class Service {
         this.userRepository = userRepository;
     }
 
+    public int getFlightID() {
+        return flightID;
+    }
     public void setFlightID(int flightID) {
         this.flightID = flightID;
     }
@@ -49,6 +52,7 @@ public class Service {
     }
 
     public Iterable<Flight> findAllFlightsByDestinationAndDate(String destination, LocalDate date){
+        System.out.println(date.toString());
         return flightRepository.findAllFlightsByDestinationAndDate(destination,date);
     }
 
@@ -68,8 +72,7 @@ public class Service {
     }
 
     public int findAvailableSeats(int flightID){
-        Flight flight = flightRepository.findOne(flightID).get();
-        return flight.getNoTotalSeats();
+        return flightRepository.findOne(flightID).get().getNoTotalSeats();
     }
 
     public void saveTourist(String touristName, int purchaseID){
@@ -96,6 +99,24 @@ public class Service {
         }
         catch(Exception e){
             System.err.println("Error saving trip" + e);
+        }
+    }
+
+    public int savePurchase(String clientName, String clientAddress){
+        try{
+            saveTourist(clientName);
+            int touristID = touristRepository.findTouristByName(clientName).get().getId();
+            Flight flight = flightRepository.findOne(flightID).get();
+            User user = userRepository.findOne(userID).get();
+            Tourist tourist = touristRepository.findOne(touristID).get();
+            Purchase purchase = new Purchase(flight,user,tourist,clientAddress);
+            purchaseRepository.save(purchase);
+            int purchaseID = purchaseRepository.findByClientAndFlight(flightID,touristID).get().getId();
+            return purchaseID;
+        }
+        catch(Exception e){
+            System.err.println("Error saving purchase" + e);
+            return 0;
         }
     }
 
