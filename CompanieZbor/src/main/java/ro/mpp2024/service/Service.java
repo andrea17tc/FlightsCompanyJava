@@ -1,6 +1,8 @@
 package ro.mpp2024.service;
 import ro.mpp2024.repository.*;
 import ro.mpp2024.model.*;
+import ro.mpp2024.utils.Observable;
+import ro.mpp2024.utils.Observer;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -8,7 +10,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
-public class Service {
+public class Service implements Observable {
     private FlightRepository flightRepository;
     private PurchaseRepository purchaseRepository;
     private TouristRepository touristRepository;
@@ -17,6 +19,8 @@ public class Service {
     private int userID;
     private int flightID=0;
     private int touristID=0;
+
+    List<Observer> observers = new ArrayList<>();
 
     public Service(FlightRepository flightRepository, PurchaseRepository purchaseRepository, TouristRepository touristRepository, TripRepository tripRepository, UserRepository userRepository) {
         this.flightRepository = flightRepository;
@@ -124,7 +128,22 @@ public class Service {
         Flight flight = flightRepository.findOne(flightID).get();
         int nr = flight.getNoTotalSeats()-noSeats;
         flightRepository.updateSeats(flightID,nr);
+        notifyObservers();
     }
 
 
+    @Override
+    public void addObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void removeObserver(Observer observer) {
+        observers.remove(observer);
+    }
+
+    @Override
+    public void notifyObservers() {
+        observers.forEach(Observer::update);
+    }
 }

@@ -9,11 +9,12 @@ import javafx.stage.Stage;
 import ro.mpp2024.Main;
 import ro.mpp2024.model.Flight;
 import ro.mpp2024.service.Service;
+import ro.mpp2024.utils.Observer;
 
 import javax.swing.*;
 import java.io.IOException;
 
-public class SearchController {
+public class SearchController implements Observer {
     public ComboBox comboBoxDestinations;
     public DatePicker datePicker;
     public Button buttonSearch;
@@ -23,6 +24,7 @@ public class SearchController {
     Service service;
     public void setService(Service service) {
         this.service = service;
+        service.addObserver(this);
         initData();
     }
 
@@ -32,6 +34,7 @@ public class SearchController {
 
     public void initData(){
         comboBoxDestinations.getItems().addAll(service.findAllFlightDestinations());
+        listView.getItems().clear();
         for (Flight flight: service.findAllAvailableFlights())
         {
          listView.getItems().add(flight);
@@ -96,5 +99,10 @@ public class SearchController {
     public void LogoutButtonClicked(ActionEvent actionEvent) {
         Stage stage = (Stage) buttonSearch.getScene().getWindow();
         stage.close();
+    }
+
+    @Override
+    public void update() {
+        initData();
     }
 }

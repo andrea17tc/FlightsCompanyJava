@@ -42,6 +42,8 @@ public class BookController {
         int availableSeats = service.findAvailableSeats(service.getFlightID());
         if(availableSeats<5){
             spinnerNumeric.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, availableSeats-1));
+            labelNoSeatsAvailable.setText("Only " + availableSeats + " seats available!");
+            labelNoSeatsAvailable.setStyle("-fx-text-fill: red;");
         }
         else{
             spinnerNumeric.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 5));

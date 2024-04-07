@@ -18,6 +18,6 @@
       <Label fx:id="labelAllFlights" layoutX="64.0" layoutY="129.0" text="All Flights" />
       <ListView fx:id="listView" layoutX="64.0" layoutY="154.0" prefHeight="169.0" prefWidth="486.0" />
       <Button fx:id="buttonBook" layoutX="499.0" layoutY="353.0" mnemonicParsing="false" onAction="#BookButtonClicked" text="Book" />
-      <Button layoutX="64.0" layoutY="353.0" mnemonicParsing="false" text="Logout" />
+      <Button layoutX="64.0" layoutY="353.0" mnemonicParsing="false" onAction="#LogoutButtonClicked" text="Logout" />
    </children>
 </AnchorPane>
