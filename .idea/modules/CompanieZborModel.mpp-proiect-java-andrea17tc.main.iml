@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="mpp-proiect-java-andrea17tc:main" external.linked.project.path="$MODULE_DIR$/../../CompanieZborModel" external.root.project.path="$MODULE_DIR$/../../CompanieZborModel" external.system.id="GRADLE" external.system.module.group="mpp-proiect-java-andrea17tc" external.system.module.type="sourceSet" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_17">
+    <output url="file://$MODULE_DIR$/../../CompanieZborModel/build/classes/java/main" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../CompanieZborModel/src/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../CompanieZborModel/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../CompanieZborModel/src/main/resources" type="java-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

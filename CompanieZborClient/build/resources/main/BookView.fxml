@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ro.mpp2024.controllers.BookController">
+   <children>
+      <Label layoutX="270.0" layoutY="44.0" text="Book Flight" />
+      <Label layoutX="33.0" layoutY="81.0" text="Client's Name" />
+      <TextField fx:id="textFieldClientName" layoutX="121.0" layoutY="77.0" />
+      <TextField fx:id="textFieldClientAdress" layoutX="122.0" layoutY="131.0" />
+      <Label layoutX="33.0" layoutY="135.0" text="Client's Adress" />
+      <Label layoutX="33.0" layoutY="222.0" text="Number of tourists" />
+      <Spinner fx:id="spinnerNumeric" layoutX="144.0" layoutY="218.0" onMouseClicked="#SpinnerValueChanged" prefHeight="26.0" prefWidth="50.0" />
+      <Button fx:id="buttonBook" layoutX="118.0" layoutY="288.0" mnemonicParsing="false" onAction="#BookButtonClicked" text="Book" />
+      <Button fx:id="buttonCancel" layoutX="33.0" layoutY="346.0" mnemonicParsing="false" onAction="#CancelButtonClicked" text="Cancel" />
+      <TextField fx:id="textFieldTouristName1" layoutX="357.0" layoutY="77.0" promptText="Tourist's Name" />
+      <TextField fx:id="textFieldTouristName2" layoutX="358.0" layoutY="131.0" promptText="Tourist's Name" />
+      <TextField fx:id="textFieldTouristName3" layoutX="359.0" layoutY="187.0" promptText="Tourist's Name" />
+      <TextField fx:id="textFieldTouristName4" layoutX="360.0" layoutY="244.0" promptText="Tourist's Name" />
+      <TextField fx:id="textFieldTouristName5" layoutX="361.0" layoutY="301.0" promptText="Tourist's Name" />
+      <Label fx:id="labelNoSeatsAvailable" layoutX="33.0" layoutY="191.0" />
+   </children>
+</AnchorPane>

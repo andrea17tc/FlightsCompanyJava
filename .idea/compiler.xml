@@ -2,9 +2,45 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-      <module name="CompanieZbor" target="17" />
-      <module name="CompanieZbor.main" target="17" />
-      <module name="CompanieZbor.test" target="17" />
+      <module name="CompanieZborClient" target="17" />
+      <module name="CompanieZborClient.main" target="17" />
+      <module name="CompanieZborClient.mpp-proiect-java-andrea17tc" target="17" />
+      <module name="CompanieZborClient.mpp-proiect-java-andrea17tc.main" target="17" />
+      <module name="CompanieZborClient.mpp-proiect-java-andrea17tc.test" target="17" />
+      <module name="CompanieZborClient.test" target="17" />
+      <module name="CompanieZborModel" target="17" />
+      <module name="CompanieZborModel.main" target="17" />
+      <module name="CompanieZborModel.mpp-proiect-java-andrea17tc" target="17" />
+      <module name="CompanieZborModel.mpp-proiect-java-andrea17tc.main" target="17" />
+      <module name="CompanieZborModel.mpp-proiect-java-andrea17tc.test" target="17" />
+      <module name="CompanieZborModel.test" target="17" />
+      <module name="CompanieZborNetworking" target="17" />
+      <module name="CompanieZborNetworking.main" target="17" />
+      <module name="CompanieZborNetworking.mpp-proiect-java-andrea17tc" target="17" />
+      <module name="CompanieZborNetworking.mpp-proiect-java-andrea17tc.main" target="17" />
+      <module name="CompanieZborNetworking.mpp-proiect-java-andrea17tc.test" target="17" />
+      <module name="CompanieZborNetworking.test" target="17" />
+      <module name="CompanieZborPersistance" target="17" />
+      <module name="CompanieZborPersistance.main" target="17" />
+      <module name="CompanieZborPersistance.test" target="17" />
+      <module name="CompanieZborPersistence" target="17" />
+      <module name="CompanieZborPersistence.main" target="17" />
+      <module name="CompanieZborPersistence.test" target="17" />
+      <module name="CompanieZborServer" target="17" />
+      <module name="CompanieZborServer.main" target="17" />
+      <module name="CompanieZborServer.test" target="17" />
+      <module name="CompanieZborService" target="17" />
+      <module name="CompanieZborService.main" target="17" />
+      <module name="CompanieZborService.mpp-proiect-java-andrea17tc" target="17" />
+      <module name="CompanieZborService.mpp-proiect-java-andrea17tc.main" target="17" />
+      <module name="CompanieZborService.mpp-proiect-java-andrea17tc.test" target="17" />
+      <module name="CompanieZborService.test" target="17" />
+      <module name="mpp-proiect-java-andrea17tc.CompanieZborModel.main" target="17" />
+      <module name="mpp-proiect-java-andrea17tc.CompanieZborModel.test" target="17" />
+      <module name="mpp-proiect-java-andrea17tc.CompanieZborPersistence.main" target="17" />
+      <module name="mpp-proiect-java-andrea17tc.CompanieZborPersistence.test" target="17" />
+      <module name="mpp-proiect-java-andrea17tc.CompanieZborService.main" target="17" />
+      <module name="mpp-proiect-java-andrea17tc.CompanieZborService.test" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
